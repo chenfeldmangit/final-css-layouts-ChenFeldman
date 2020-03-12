@@ -1,13 +1,4 @@
-.container {
-    display: flex;
-    width:100%;
-    font-size: 14px;
-}
 
-.sideMenu{
-    width: 30%;
-    position: fixed;
-}
 
 .sideMenu .menuItem{
     display: flex;
