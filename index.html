@@ -84,12 +84,11 @@
                     <div class="cover-image"></div>
                     <div class="personal-data-main">
                         <div class="profile-image"></div>
-                        <div class="gongButton">Edit Profile</div>
+                        <div class="gongButton" onclick="openProfileForm()">Edit Profile</div>
                     </div>
                     <div class="personal-data-bottom">
                         <span class="about-me">
-                            Born and raised here so I am part of twitter and will always be
-                            Father & Husband
+                            
                         </span>
                         <div class="more-about-me">
                             <div class="location">
@@ -111,6 +110,19 @@
                 <div id="newsFeed">
                     
                 </div>
+            </div>
+            <div id="overlay" onclick="closeProfileForm(event)">
+                <form id="editProfileForm" onsubmit="return false">
+                    <div>
+                        <label>Name</label>
+                        <input id="userName" type="text" value="test" onchange="checkLimit(10)" required>
+                    </div>
+                    <div>
+                        <label>Description</label>
+                        <textarea id="userDescription" required></textarea>
+                    </div>
+                    <div id="saveUserData" class="gongButton" onclick="saveUserData()">Save</div>
+                </form>
             </div>
         </div>
     </body>
