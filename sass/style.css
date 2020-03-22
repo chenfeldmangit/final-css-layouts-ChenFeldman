@@ -3,10 +3,10 @@
   width: 100%;
   font-size: 14px;
   background-color: white; }
-  .container .sideMenu {
+  .container #sideMenu {
     width: 30%;
     position: fixed; }
-    .container .sideMenu .menuItem {
+    .container #sideMenu .menuItem {
       display: flex;
       border: 1px solid navy;
       border-radius: 10px;
@@ -14,29 +14,63 @@
       margin: .7em 0 0 0;
       padding: 1em 0 0 1em;
       cursor: pointer; }
-      .container .sideMenu .menuItem:hover {
+      .container #sideMenu .menuItem:hover {
         background-color: gray; }
-      .container .sideMenu .menuItem .top {
+      .container #sideMenu .menuItem .top {
         border: none; }
-      .container .sideMenu .menuItem .icon {
+      .container #sideMenu .menuItem .icon {
         height: 2em;
         width: 2em;
         margin: 0 1em 0 0; }
-        .container .sideMenu .menuItem .icon .profile {
+        .container #sideMenu .menuItem .icon .profile {
           background-image: url("https://pbs.twimg.com/profile_images/1090932791829819393/Syg_hmp6_bigger.jpg");
           background-size: contain; }
-      .container .sideMenu .menuItem .title {
+      .container #sideMenu .menuItem .title {
         font-size: 1.2em;
         font-weight: 600; }
-  .container .newsFeedWrapper {
+  .container #profileContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
+    .container #profileContainer.hidden {
+      display: none; }
+    .container #profileContainer .cover-image {
+      background-image: url("");
+      background-size: contain;
+      width: 100%;
+      height: 15em; }
+    .container #profileContainer .personal-data-main {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      transform: translateY(-50%);
+      padding: 0 3em; }
+      .container #profileContainer .personal-data-main .profile-image {
+        background-image: url("");
+        background-size: cover;
+        width: 7em;
+        height: 7em;
+        border: 5px solid white;
+        border-radius: 50%;
+        background-repeat: no-repeat; }
+    .container #profileContainer .personal-data-bottom {
+      display: flex;
+      flex-direction: column; }
+      .container #profileContainer .personal-data-bottom .more-about-me {
+        display: flex;
+        justify-content: space-between; }
+        .container #profileContainer .personal-data-bottom .more-about-me img {
+          width: 2em;
+          height: 2em; }
+  .container #newsFeedWrapper {
     margin: 1em 0 0 32%;
     width: 65%;
     position: relative;
     display: flex;
     flex-direction: column; }
-    .container .newsFeedWrapper .tweetType {
+    .container #newsFeedWrapper .tweetType {
       display: flex; }
-      .container .newsFeedWrapper .tweetType .icon {
+      .container #newsFeedWrapper .tweetType .icon {
         margin: .5em;
         padding: .3em;
         cursor: pointer;
@@ -45,55 +79,57 @@
         line-height: 1em;
         text-align: center;
         vertical-align: middle; }
-        .container .newsFeedWrapper .tweetType .icon:hover {
+        .container #newsFeedWrapper .tweetType .icon:hover {
           background-color: gray;
           color: black; }
-    .container .newsFeedWrapper .tweetUpdate {
+    .container #newsFeedWrapper .tweetUpdate {
       width: 10em; }
-    .container .newsFeedWrapper .actions {
+    .container #newsFeedWrapper .actions {
       display: flex;
       width: 100%;
       justify-content: space-between; }
-    .container .newsFeedWrapper .tweetWrapper .content .profileImage {
+    .container #newsFeedWrapper #tweetWrapper.hidden {
+      display: none; }
+    .container #newsFeedWrapper #tweetWrapper .content .profileImage {
       background-image: url("https://pbs.twimg.com/profile_images/1090932791829819393/Syg_hmp6_bigger.jpg");
       background-size: contain;
       width: 5em;
       height: 5em;
       border-radius: 50%; }
-    .container .newsFeedWrapper .tweetWrapper .content .textUpdate textarea {
+    .container #newsFeedWrapper #tweetWrapper .content .textUpdate textarea {
       width: 100%;
       height: 7em;
       font-size: 1em; }
-    .container .newsFeedWrapper .newsFeed {
+    .container #newsFeedWrapper #newsFeed {
       margin: 2em 0 0 0; }
-      .container .newsFeedWrapper .newsFeed .item {
+      .container #newsFeedWrapper #newsFeed .item {
         border: 1px solid blue;
         border-radius: 10px;
         margin: 2em;
         padding: 1.5em;
         display: flex;
         flex-direction: column; }
-      .container .newsFeedWrapper .newsFeed .userProfile {
+      .container #newsFeedWrapper #newsFeed .userProfile {
         display: flex; }
-        .container .newsFeedWrapper .newsFeed .userProfile .image {
+        .container #newsFeedWrapper #newsFeed .userProfile .image {
           margin: 0 .7em 0 0;
           width: 3em;
           height: 3em;
           background-image: url("https://pbs.twimg.com/profile_images/1090932791829819393/Syg_hmp6_bigger.jpg");
           background-size: contain;
           border-radius: 50%; }
-        .container .newsFeedWrapper .newsFeed .userProfile .name {
+        .container #newsFeedWrapper #newsFeed .userProfile .name {
           font-size: 1em;
           font-weight: 600; }
-      .container .newsFeedWrapper .newsFeed .content {
+      .container #newsFeedWrapper #newsFeed .content {
         font-size: 1em;
         margin: 1em 0; }
-      .container .newsFeedWrapper .newsFeed .actionsWrapper {
+      .container #newsFeedWrapper #newsFeed .actionsWrapper {
         display: flex; }
-        .container .newsFeedWrapper .newsFeed .actionsWrapper .action {
+        .container #newsFeedWrapper #newsFeed .actionsWrapper .action {
           width: 1.3em;
           height: 1.3em; }
-          .container .newsFeedWrapper .newsFeed .actionsWrapper .action:hover {
+          .container #newsFeedWrapper #newsFeed .actionsWrapper .action:hover {
             background-color: gray; }
   .container .gongButton {
     margin: .7em 0 0 0;
