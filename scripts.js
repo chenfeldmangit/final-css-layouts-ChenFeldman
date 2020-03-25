@@ -4,6 +4,11 @@ this.user = {
     aboutMe: "Born and raised here so I am part of twitter and will always be"
 };
 
+this.tweets = [
+    {name:"dasda"},
+    {name:"dasda"},
+    {name:"dasda"}
+]
 
 window.onload = () => {
     loadUserData();

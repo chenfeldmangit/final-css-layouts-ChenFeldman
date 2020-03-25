@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <style>
+            #gong-button{
+                width:30px;
+                height:30px;
+                border: 1px solid;
+            }
+        </style>
+        <script>
+            window.onload = function(){
+                alert('hiii');
+            var element = document.querySelector(".gong-button");
+
+            element.addEventListener('click',function(){
+        alert('hiii');
+                document.getElementById("test").innerHTML = "Niceee";
+            })
+})
+
+        </script>
+    </head>
+    <body>
+        <div id="test">
+            Hello Gong
+          </div>
+          <div class="gong-button">
+            I am a button
+          </div>
+    </body>
+</html>

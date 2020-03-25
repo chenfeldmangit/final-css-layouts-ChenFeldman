@@ -1,5 +1,6 @@
 .container {
   display: flex;
+  font-size: 20px;
   width: 100%;
   font-size: 14px;
   background-color: white; }
@@ -8,7 +9,7 @@
     position: fixed; }
     .container #sideMenu .menuItem {
       display: flex;
-      border: 1px solid navy;
+      border: 1px solid white;
       border-radius: 10px;
       height: 2.5em;
       margin: 0.7em 0 0 0;
@@ -167,7 +168,7 @@
         background-color: yellow; } }
   .container .gongButton:hover {
     background-color: #1da1dc; }
-  @media only screen and (min-device-width: 300px) and (max-device-width: 700px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  @media only screen and (min-device-width: 300px) {
     .container .container {
       font-size: 8px; } }
 
