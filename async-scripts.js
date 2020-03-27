@@ -218,3 +218,22 @@ const makeBurgerAsyncAwait = async () => {
 }
 
 makeBurgerAsyncAwait();
+
+
+const getUserDataAxios = async () => {
+    let userData = await axios('./data/userData.json');
+    console.log(userData.data);
+}
+
+const getUserDataFetch = async () => {
+    fetch('./data/userData.json')
+    .then(response => {
+        return response.json();
+    })
+    .then(data => {
+        console.log(data);
+    })
+}
+
+getUserDataAxios();
+getUserDataFetch();
