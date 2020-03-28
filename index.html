@@ -4,6 +4,7 @@
         <link rel="stylesheet" href="sass/style.css">
         <meta name="viewport" content="width=device-witdth, initial-scale=1.0">
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="mock-local-server.js"></script>
         <script src="scripts.js"></script>
         <script src="async-scripts.js"></script>
     </head>
@@ -12,6 +13,7 @@
         <template>
             <div class="item">
                 <div class="userProfile">
+                    <div id="tweetId">1</div>
                     <div class="image"></div>
                     <div class="name">Template Test</div>
                 </div>
@@ -21,7 +23,7 @@
                     consequuntur nobis facere! Incidunt tempora aliquam ipsum!
                 </div>
                 <div class="actionsWrapper">
-                    <div class="action">
+                    <div class="action" onclick="handleLikeClick(event)">
                         <svg viewBox="0 0 24 24"
                             class="r-4qtqp9 r-yyyyoo r-1xvli5t r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-1hdv0qi">
                             <g>
@@ -89,7 +91,7 @@
                     <div class="content">
                         <div class="profileImage"></div>
                         <div class="textUpdate">
-                            <textarea>What's happening?</textarea>
+                            <textarea class="content">What's happening?</textarea>
                         </div>
                     </div>
                     <div class="actions">
@@ -98,7 +100,7 @@
                             <div class="icon">Gif</div>
                             <div class="icon">Poll</div>
                         </div>
-                        <div class="gongButton tweetUpdate" onclick="addTweetItem()">
+                        <div class="gongButton tweetUpdate" onclick="addNewTweetItem()">
                             Tweet
                         </div>
                     </div>

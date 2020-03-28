@@ -1,3 +1,4 @@
+
 this.user = {
     coverImagePath: "https://pbs.twimg.com/profile_banners/1018006119468421120/1560693180/1500x500",
     profileImagePath: "https://pbs.twimg.com/profile_banners/1018006119468421120/1560693180/1500x500",
@@ -13,6 +14,9 @@ this.tweets = [
 window.onload = () => {
     loadUserData();
     loadTweets();
+    setInterval(()=>{
+        loadTweets();
+    },5000);
 }
 
 goToProfilePage = () => {
@@ -41,21 +45,29 @@ loadUserData = () => {
 }
 
 loadTweets = () => {
-    fetch('./data/tweets.json')
-    .then(res => res.json())
-    .then(data => {
-        data.forEach(item => {
-            addTweetItem(item.userName,item.description);
-        }); 
+    document.getElementById("newsFeed").innerHTML = "";
+    TweetAPI.getTweets()
+    .then(result => {
+        result.forEach(item => {
+            addTweetItemToFeed(item);
+        });
     })
-    .catch(err => console.error(err));
+    .catch(err => {
+        console.log(`Error while getting tweets: ${err}`);
+    })
 }
 
-addTweetItem = (userName, content) => {
-    var temp = document.getElementsByTagName("template")[0];
-    var clon = temp.content.cloneNode(true);
-    clon.querySelector(".name").innerHTML = userName;
-    clon.querySelector(".content").innerHTML = content;
+addNewTweetItem = () => {
+    let tweetUpdate = document.querySelector("#newsFeedWrapper .textUpdate .content").value;
+    TweetAPI.addTweet({userName:"John Doe", description: tweetUpdate});
+    document.querySelector("#newsFeedWrapper .textUpdate .content").value = "";
+}
+
+addTweetItemToFeed = (tweetItem) => {
+    let temp = document.getElementsByTagName("template")[0];
+    let clon = temp.content.cloneNode(true);
+    clon.querySelector(".name").innerHTML = tweetItem.userName;
+    clon.querySelector(".content").innerHTML = tweetItem.description;
     document.getElementById("newsFeed").appendChild(clon);    
 }
 
@@ -83,4 +95,9 @@ saveUserData = () => {
 // Bonus for the form exercise. Can also use onkeypress
 checkLimit = (charLimit) => {
         
+}
+
+handleLikeClick = (event) => {
+    let itemId = event.target.parentElement.parentElement.parentElement.querySelector("#tweetId").innerHTML;
+    TweetAPI.likeTweet(itemId);
 }
