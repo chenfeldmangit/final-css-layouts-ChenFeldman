@@ -161,4 +161,42 @@ const getUserDataFetch = async () => {
 // getUserDataAxios();
 // getUserDataFetch();
 
+// Live Example - event loop 
+async function main(){
+    console.log('A');
+    setTimeout(() => { 
+        console.log('B'); 
+    },0);
+
+    await promiseTest();
+
+    doSomethingNSeconds(5);
+
+    console.log('C');
+  }
+  main();
+  
+  function doSomethingNSeconds(seconds){
+    let start = Date.now(), now = start;
+    while (now - start < (seconds*1000)) {
+      now = Date.now();
+    }
+  }
+  
+  function promiseTest(){
+      return new Promise(resolve => {
+    try{
+        fetch('bla.json')
+      .then(result => {
+          console.log(result);
+      });
+        console.log('Promise');
+        resolve();
+    }
+    catch(err){
+        console.log('Promie with Error');
+      resolve();  
+    }
+    })
+  }
 
