@@ -1,8 +1,10 @@
+
 class TweetAPI {
     static getTweets = () => {
         return new Promise((resolve, reject) => {
             try {
                 let tweetsData = localStorage.getItem('tweets');
+                localStorage.setItem('test',JS.stringify)
                 resolve(JSON.parse(tweetsData));
             }
             catch (err) {

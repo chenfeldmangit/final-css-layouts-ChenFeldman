@@ -101,3 +101,18 @@ handleLikeClick = (event) => {
     let itemId = event.target.parentElement.parentElement.parentElement.querySelector("#tweetId").innerHTML;
     TweetAPI.likeTweet(itemId);
 }
+
+showTweetsFromServer = () => {
+    fetch('https://my-json-server.typicode.com/chenfeldmangit/js-mock-data-ChenFeldman/tweets')
+    .then(response => {
+        return response.json();
+    })
+    .then(response => {
+        console.log(response);
+    })
+    .catch(err => {
+        console.log(err);
+    })
+}
+
+showTweetsFromServer();
